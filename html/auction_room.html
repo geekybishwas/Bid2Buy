@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bid2Buy: Auction Room</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../css/header_only.css" />
+  <link rel="stylesheet" href="../css/scrollable.css" />
+  <script src="../js/get_back_btn.js"></script>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+  <style>
+    .wrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100vw;
+      min-height: 88vh;
+    }
+
+    .left_wrapper,
+    .right_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      gap: 5vh;
+    }
+
+    .upper_part,
+    .lower_part {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .bidded_time_n_detail,
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .current_bid {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 310px;
+      height: 310px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgb(0, 0, 0);
+      background-color: #0e7bfa;
+    }
+
+    .style_circle {
+      width: 300px;
+      height: 300px;
+      display: flex;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+      background-color: white;
+    }
+
+    .style_circle h3 {
+      color: #000000;
+      font-size: 36px;
+    }
+
+    .style_circle strong {
+      color: #0e7bfa;
+      font-size: 75px;
+      font-weight: normal;
+    }
+
+    .style_circle h4 {
+      font-weight: normal;
+      color: #000000;
+      font-size: 18px;
+    }
+
+    .style_circle em {
+      color: rgb(0, 0, 0);
+      font-size: 21px;
+    }
+
+    .left_wrapper {
+      padding: 2vh 0px 2vh 0px;
+      justify-content: center;
+      width: 32vw;
+      gap: 10px;
+      box-shadow: 0 0 10px rgb(0, 0, 0);
+    }
+
+    .right_wrapper {
+      width: 38vw;
+    }
+
+    .upper_part {
+      padding: 0px 10px;
+    }
+
+    .do_bid_box {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 40px 10px;
+      border-radius: 5px;
+      width: 90%;
+      border: 1px solid #0e7bfa;
+      box-shadow: 0 0 10px rgb(0, 0, 0);
+    }
+
+    .do_bid_box h3 {
+      color: #FD7401;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    .do_bid_box p {
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    .do_bid_box form {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      gap: 5px;
+    }
+
+    form select {
+      font-size: 18px;
+      padding: 3px 10px;
+      text-align: center;
+      color: #0e7bfa;
+      border-radius: 3px;
+      outline: none;
+      border: 1px solid #0e7bfa;
+      cursor: pointer;
+    }
+
+    button {
+      font-size: 18px;
+      text-align: center;
+      border-radius: 3px;
+      border: none;
+      font-weight: bold;
+      outline: none;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 5px 30px;
+      color: #ffffff;
+    }
+
+    button#do_bid {
+      background-color: #0e7bfa;
+    }
+
+    button#cancel_bid {
+      background-color: #C9302C;
+    }
+
+    button#do_bid:hover,
+    button#cancel_bid:hover {
+      background-color: #000000;
+    }
+
+    ul.bidded_time_n_detail {
+      width: 100%;
+      padding: 5px 10px 10px 10px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      position: relative;
+      top: 50px;
+      right: 350px;
+    }
+
+    .bidded_time_n_detail h2 {
+      color: #FD7401;
+      font-weight: normal;
+      text-align: center;
+      width: 150%;
+    }
+
+    .bidded_time_n_detail li {
+      width: 800px;
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-start;
+      gap: 150px;
+      flex-direction: row;
+      border-bottom: 1px solid #0e7bfa;
+      border-left: 2px solid #000000;
+      border-right: 2px solid #000000;
+      padding: 5px 20px;
+    }
+
+    .bidded_time_n_detail li.last_li {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom: 2px solid #000000;
+    }
+
+    .bidded_time_n_detail li.first_li {
+      border: 2px solid #000000;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      font-weight: bold;
+    }
+
+    .product_image_n_name {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #0e7bfa;
+      padding: 20px 0px;
+    }
+
+    .product_image_n_name img {
+      border-radius: 5px;
+      width: 70%;
+    }
+
+    .product_image_n_name h2 {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    .product_detail h2 {
+      color: #FD7401;
+      margin-bottom: 7px;
+      width: 100%;
+      text-align: center;
+    }
+    .product_detail h3 {
+      color: #0e7bfa;
+      margin-bottom: 3px;
+      font-weight: normal;
+    }
+
+    .product_detail h3 span {
+      color: #000000;
+    }
+
+    .left_wrapper button {
+      background-color: #FD7401;
+      color: #ffffff;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      outline: none;
+      font-weight: normal;
+    }
+
+    .left_wrapper button:hover {
+      background-color: #000000;
+    }
+    .details{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 0px 50px; 
+    }
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="first_nav">
+      <div class="left_part">
+        <a href="./homepage.html">
+          <div class="logo">
+            <!-- <img src="../assets/logo_main.png" alt="B2B" /> -->
+            <h1>Bid2Buy</h1>
+          </div>
+        </a>
+        <ul class="nav_btns">
+          <li>
+            <h2 class="page_title">Auction Room</h2>
+          </li>
+        </ul>
+      </div>
+      <div class="authentication">
+        <h3 class="get_back_btn authentication_btn">❌ Go Back</h3>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="scrollable">
+      <div class="wrapper">
+        <section class="left_wrapper">
+          <div class="product_detail">
+            <h2>Auction Info</h2>
+            <div class="details">
+              <h3>Starting Price: <span>$100</span></h3>
+            <h3>Time left: <span>5 hrs</span></h3>
+            <h3>No of Bids: <span>10</span></h3>
+            <h3>Active Bidders: <span>3</span></h3>
+            </div>
+          </div>
+          <div class="product_image_n_name">
+            <img src="../assets/p1.png" alt="Product Img">
+            <h2>Product Name</h2>
+          </div>
+          <a href="./on_click_product.html"><button>Product Details</button></a>
+        </section>
+        <section class="middle_part">
+          <div class="current_bid">
+            <div class="style_circle">
+              <h3>Current Bid</h3>
+              <strong id="current_bid_value">$490</strong>
+              <h4>By: <em id="current_bidder">Kyle Perry</em></h4>
+            </div>
+          </div>
+        </section>
+        <section class="right_wrapper">
+          <div class="upper_part">
+            <div class="do_bid_box">
+
+              <h3>Bid Now</h3>
+              <p>Bid as much as high value to win this bidding war</p>
+              <form>
+
+                <label for="Bid_amount">Choose Bid Amount:</label>
+                <select id="Bid_amount" name="Bid_amount" required>
+                  <option value="value-1">$500</option>
+                  <option value="value-2">$510</option>
+                  <option value="value-3">$520</option>
+                  <option value="value-4">$530</option>
+                  <option value="value-5">$540</option>
+                  <input type="submit" value="Place Bid" hidden>
+              </form>
+              <div class="buttons">
+                <button id="do_bid">Place Bid</button>
+                <button id="cancel_bid" class="hide">Cancel Bid</button>
+              </div>
+            </div>
+          </div>
+          <div class="lower_part">
+            <ul class="bidded_time_n_detail">
+              <h2>Recent Bids</h2>
+              <li class="first_li"><span class="serial_no">Bid</span><span class="time_title">Bid Time</span><span
+                  class="info_text_title">Bid Detail</span></li>
+              <li><span class="serial_no">XX</span><span class="time">18:00:03</span><span class="info_text">User 120001
+                  bids $1000.</span></li>
+              <li><span class="serial_no">XX</span><span class="time">18:00:03</span><span class="info_text">User 120001
+                  bids $1000.</span></li>
+              <li><span class="serial_no">XX</span><span class="time">18:00:03</span><span class="info_text">User 120001
+                  bids $1000.</span></li>
+              <li><span class="serial_no">XX</span><span class="time">18:00:03</span><span class="info_text">User 120001
+                  bids $1000.</span></li>
+              <li class="last_li"><span class="serial_no">XX</span><span class="time">18:00:03</span><span
+                  class="info_text">User 120001 bids $1000.</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script>
+    let currentBid = 490;//in dolar
+    document.getElementById('do_bid').addEventListener('click', () => {
+      currentBid += 10;
+      document.getElementById('cancel_bid').classList.remove('hide');
+    });
+    document.getElementById('cancel_bid').addEventListener('click', () => {
+      document.getElementById('cancel_bid').classList.add('hide');
+    });
+  </script>
+</body>
+
+</html>

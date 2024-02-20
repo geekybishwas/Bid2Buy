@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bid2Buy | Home</title>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/homepage.css" />
+    <link rel="stylesheet" href="../css/footer_only.css" />
+    <link rel="stylesheet" href="../css/header_only.css" />
+    <link rel="stylesheet" href="../css/scrollable.css" />
+    <!-- font aesome icon  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- google icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../js/scroll_to_top.js"></script>
+    <script src="../js/slide_banner_images.js"></script>
+    <script src="../js/show_user_options.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="first_nav">
+        <div class="left_part">
+          <a href="./homepage.html">
+            <div class="logo">
+              <!-- <img src="../assets/logo_main.png" alt="B2B" /> -->
+              <h1>Bid2Buy</h1>
+            </div>
+          </a>
+          <ul class="nav_btns">
+            <li>
+              <a class="text_as_btn" href="../html/all_categories.html"
+                >Categories</a>
+            </li>
+            <li>
+              <a class="text_as_btn" href="../html/secondhand_picks.html"
+                >Secondhand Picks</a>
+            </li>
+            <li>
+              <a class="text_as_btn" href="../html/sell_product.html"
+                >Sell Product</a>
+            </li>
+            <li>
+              <a class="text_as_btn" href="../html/watchlist.html"
+                >Watchlist</a>
+            </li>
+            <li>
+              <a class="text_as_btn" href="../html/help_n_contact_logged.html"
+                >Help & Contact</a>
+            </li>
+            </li>
+          </ul>
+        </div>
+        <div class="authentication">
+          <nav class="second_nav">
+            <div class="search_box">
+              <input type="text" placeholder="search anything" />
+              <span class="search_icon_wrapper bluish_bg">
+                <i class="fa fa-search"></i>
+              </span>
+            </div>
+          </nav>
+          <img id="profile_pic" src="../assets/profile.png" alt="Profile pic" />
+        </div>
+      </nav>
+    </header>
+    <div id="user_detail_box"  class="user_details_n_logout_n_settings hide">
+      <div class="user_detail_switch_opt">
+        <div class="image_n_name">
+          <img src="../assets/profile.png" alt="Profile Pic">
+          <span class="name">Alysa Kerry</span>
+        </div>
+        <a href="../html/signin.html">Log In to another account</a>
+      </div>
+          <ul class="other_options">
+            <li>
+              <a href="../html/my_detail_n_edit_info.html">
+                <i class="fa fa-user-o"></i>
+                <span class="text_as_btn"
+                >My Information</span>
+              </a>
+            </li>
+            <li>
+              <a href="../html/user_verification.html">
+                <i class="fa fa-check-square-o"></i>
+                <span class="text_as_btn"
+                >Verification</span>
+              </a>
+            </li>
+            <li>
+              <a href="../html/history.html">
+                <i class="fa fa-history"></i>
+                <span class="text_as_btn"
+                >My Activities</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html">
+                <i class="fa fa-sign-out"></i>
+                <span class="text_as_btn"
+                >Log Out</span>
+              </a>
+            </li>
+        </ul>
+    </div>
+    <!-- //for making custom scroll bar -->
+    <div class="scrollable">
+      <main>
+        <!--product highlight slide show-->
+        <section class="slideshow_container">
+          <div class="slide">
+            <a href="../html/on_click_product.html"><img src="../assets/Banner-1.jpg" alt="Highlight 1" /></a>
+          </div>
+          <div class="slide">
+            <a href="../html/on_click_product.html"><img src="../assets/Banner-2.gif" alt="Highlight 2" /></a>
+          </div>
+          <div class="slide">
+            <a href="../html/on_click_product.html"><img src="../assets/Banner-3.png" alt="Highlight 3" /></a>
+          </div>
+          <div class="slide">
+            <a href="../html/on_click_product.html"><img src="../assets/Banner-4.png" alt="Highlight 4" /></a>
+          </div>
+          <a class="prev">&#10094;</a>
+          <a class="next">&#10095;</a>
+          <div style="text-align: center">
+            <span id="dot-1" class="dot"></span>
+            <span id="dot-2" class="dot"></span>
+            <span id="dot-3" class="dot"></span>
+            <span id="dot-4" class="dot"></span>
+          </div>
+        </section>
+  
+        <!-- reccomended products section -->
+        <section class="products_section">
+          <div class="heading_container">
+             <h2>Just For You</h2>
+             <p>Reccomends Products for you</p>
+          </div>
+          <div class="container">
+            <div class="product_container"> 
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p1.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p2.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p12.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>   
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p3.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p4.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+             <!-- items to be extracted accessing db -->
+             <a href="../html/on_click_product.html">
+              <div class="product_box">
+                <div class="product_img-box">
+                  <img src="../assets/p2.png" alt="" />
+                  <span>Highlight text</span>
+                </div>
+                <div class="product_detail-box">
+                  <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                  <span class="no_of_bids"> 5 Bids </span>
+                  <span>20hrs left</span>
+                  <p>Product Name</p>
+                </div>
+              </div>
+            </a>
+            <a href="../html/on_click_product.html">
+              <div class="product_box">
+                <div class="product_img-box">
+                  <img src="../assets/p4.png" alt="" />
+                  <span>Highlight text</span>
+                </div>
+                <div class="product_detail-box">
+                  <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                  <span class="no_of_bids"> 5 Bids </span>
+                  <span>20hrs left</span>
+                  <p>Product Name</p>
+                </div>
+              </div>
+            </a>
+            <a href="../html/on_click_product.html">
+              <div class="product_box">
+                <div class="product_img-box">
+                  <img src="../assets/p6.png" alt="" />
+                  <span>Highlight text</span>
+                </div>
+                <div class="product_detail-box">
+                  <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                  <span class="no_of_bids"> 5 Bids </span>
+                  <span>20hrs left</span>
+                  <p>Product Name</p>
+                </div>
+              </div>
+            </a>
+            <a href="../html/on_click_product.html">
+              <div class="product_box">
+                <div class="product_img-box">
+                  <img src="../assets/p8.png" alt="" />
+                  <span>Highlight text</span>
+                </div>
+                <div class="product_detail-box">
+                  <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                  <span class="no_of_bids"> 5 Bids </span>
+                  <span>20hrs left</span>
+                  <p>Product Name</p>
+                </div>
+              </div>
+            </a>
+            <a href="../html/on_click_product.html">
+              <div class="product_box">
+                <div class="product_img-box">
+                  <img src="../assets/p10.png" alt="" />
+                  <span>Highlight text</span>
+                </div>
+                <div class="product_detail-box">
+                  <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                  <span class="no_of_bids"> 5 Bids </span>
+                  <span>20hrs left</span>
+                  <p>Product Name</p>
+                </div>
+              </div>
+            </a>
+            </div>
+          </div>
+        </section>
+        <!-- high bids product -->
+        <section class="products_section">
+          <div class="heading_container">
+            <h2>High Bids Products</h2>
+            <p>Products with high Bids on Auction</p>
+          </div>
+          <div class="container">
+            <div class="product_container"> 
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p5.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p6.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p12.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>   
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p7.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p8.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+             <!-- items to be extracted accessing db -->
+            </div>
+          </div>
+        </section>
+        <!-- high price product -->
+        <section class="products_section">
+          <div class="heading_container">
+            <h2>High Price Products</h2>
+            <p>Products with high price on Auction</p>
+          </div>
+          <div class="container">
+            <div class="product_container"> 
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p9.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p12.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>   
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p10.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p11.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p12.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <!-- items to be extracted accessing db -->
+            </div>
+          </div>
+        </section>
+        <!-- popular categories -->
+        <section class="products_section">
+          <div class="heading_container">
+            <h2>Explore Popular Categories</h2>
+          </div>
+          <div class="container">
+            <div class="product_container">
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/category.png" alt="" />
+                  </div>
+                  <div class="product_detail-box">
+                    <span>Real State</span>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/category.png" alt="" />
+                  </div>
+                  <div class="product_detail-box">
+                    <span>Real State</span>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/category.png" alt="" />
+                  </div>
+                  <div class="product_detail-box">
+                    <span>Real State</span>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/category.png" alt="" />
+                  </div>
+                  <div class="product_detail-box">
+                    <span>Real State</span>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/category.png" alt="" />
+                  </div>
+                  <div class="product_detail-box">
+                    <span>Real State</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <a href="../html/all_categories.html"
+              ><button class="view_all">View All</button></a
+            >
+        </section>
+  
+        <!--clossing soon  products auction section -->
+        <section class="products_section">
+          <div class="heading_container">
+            <h2>Limited Time products</h2>
+            <p>Auction Ending Soon</p>
+          </div>
+          <div class="container">
+            <div class="product_container">
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p1.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p3.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p5.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p1.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p7.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+        <!--Second Hand Products section -->
+        <section class="products_section">
+          <div class="heading_container">
+            <h2>Second Hand Zone</h2>
+            <p>Used Products on Auction</p>
+          </div>
+          <div class="container">
+            <div class="product_container"> 
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p2.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p4.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p6.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p8.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+              <a href="../html/on_click_product.html">
+                <div class="product_box">
+                  <div class="product_img-box">
+                    <img src="../assets/p10.png" alt="" />
+                    <span>Highlight text</span>
+                  </div>
+                  <div class="product_detail-box">
+                    <div>Current Bid : <span class="current_bid_price">$150.00</span></div>
+                    <span class="no_of_bids"> 5 Bids </span>
+                    <span>20hrs left</span>
+                    <p>Product Name</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <a href="../html/secondhand_picks.html"
+            ><button class="view_all">View All</button></a
+          >
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="auction_logo">
+          <!-- <img
+            class="Bid2Buy-Logo"
+            src="../assets/logo_main.png"
+            alt="Auction Logo"
+          /> -->
+          <!-- <div class="logo"> -->
+            <!-- <img src="../assets/logo_main.png" alt="B2B" /> -->
+            <h1>Bid2Buy Corp.</h1>
+          <!-- </div> -->
+        </div>
+        <p class="footer_text black_text">
+          Explore the world of possibilities with us! Reach out, connect, and engage by following us on our vibrant social networks. Your thoughts matter, and we're eager to hear from you. Whether you have questions, feedback, or just want to say hello, our team is here and ready to make your experience extraordinary. Don't miss out—join our community and let's create something amazing together!
+        </p>
+        <div class="social-icons">
+          <a href="#" class="icon"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="icon"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="icon"><i class="fa fa-instagram"></i></a>
+          <a href="mailto:you@example.com" class="icon"
+            ><i class="fa fa-envelope"></i
+          ></a>
+          <a href="#" class="icon"><i class="fa fa-snapchat"></i></a>
+        </div>
+        <div class="bid-container">
+  
+          <h2>About Us</h2>
+          <p><span class="highlight">Bid2Buy</span> is a dynamic multi-vendor auction site catering to both buyers and sellers. As a buyer, you have the exciting opportunity to engage in the auction process, placing bids and securing items upon winning. On the flip side, sellers can easily register their products for auction, making Bid2Buy the ideal platform for both buyers and sellers to connect and transact. It's not just a marketplace; it's a vibrant auction space where every bid and product tells a unique story. Join Bid2Buy and experience the best of online auctions!</p>
+  
+          <h3>Why Choose Bid2Buy?</h3>
+          <div class="feature-list">
+              <ul>
+                  <li><span class="highlight">Diverse Selection:</span> Explore a curated range of products, from rare collectibles to expensive collections.</li>
+                  <li><span class="highlight">Real-Time Bidding:</span> Stay in the loop with our user-friendly real-time bidding system.</li>
+                  <li><span class="highlight">Second-hand Marketplace:</span> Bid confidently on our second-hand marketplace.</li>
+                  <li><span class="highlight">Interactive Auctions:</span> Participate in lively auctions that make the bidding process an experience to remember.</li>
+              </ul>
+          </div>
+  
+          <h3>How It Works:</h3>
+          <ol class="feature-list">
+              <li><span class="highlight">Browse:</span> Discover a curated selection of items up for bid.</li>
+              <li><span class="highlight">Bid:</span> Place your bids confidently with our user-friendly bidding system.</li>
+              <li><span class="highlight">Win:</span> The highest bidder at the end of the auction secures the item. Congratulations, it's yours!</li>
+          </ol>
+  
+          <div class="call-to-action">
+              <a href="../html/help_n_contact.html" class="btn">Contact Us</a>
+          </div>
+      </div>
+        <div class="copyright_text">
+          Copyright <span class="copyright_c">©</span> 2023-2024 Bid2Buy Corp. All Rights Reserved.
+        </div>
+        <span class="move_up_icon"><i class="fa fa-angle-up"></i></span>
+      </footer>
+    </div>
+  </body>
+</html>

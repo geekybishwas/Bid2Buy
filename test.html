@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AJAX Example</title>
+    </head>
+    <body>
+        <form id="myForm">
+            <input type="text" id="data" placeholder="Enter data" />
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="result"></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document
+                    .getElementById("myForm")
+                    .addEventListener("submit", function (event) {
+                        // event.preventDefault(); // Prevent the form from submitting normally
+
+                        // Get the data from the input field
+                        var formData = document.getElementById("data").value;
+
+                        // Send the data to the PHP script using Fetch API
+                        fetch("./test1.php", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type":
+                                    "application/x-www-form-urlencoded",
+                            },
+                            body: "data=" + encodeURIComponent(formData), // Encode the data for safe transmission
+                        })
+                            .then((response) => response.text()) // Parse the response as text
+                            .then((data) => {
+                                // // Handle the response from the PHP script
+                                // document.getElementById("result").innerHTML =
+                                //     data;
+                                console.log(data);
+                            })
+                            .catch((error) => console.error("Error:", error));
+                    });
+            });
+        </script>
+    </body>
+</html>

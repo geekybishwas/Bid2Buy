@@ -1,0 +1,249 @@
+/*css file only for hompage after login*/
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+/* body::-webkit-scrollbar { */
+  /* display: none; Hide the default scrollbar */
+/* } */
+/* main{ */
+    /* font-family: Ubuntu; */
+/* } */
+/* .scrollable {
+  display: flex;
+  flex-direction: column;
+  height: 88vh;
+  overflow-x: hidden; */
+  /* overflow-y: auto; Add this line to make .scrollable scrollable */
+/* } */
+
+/* Styling for scrollbar in WebKit browsers (Chrome, Safari) */
+/* .scrollable::-webkit-scrollbar { */
+  /* width: 12px; */
+/* } */
+
+/* .scrollable::-webkit-scrollbar-thumb { */
+  /* background-color: #3b3a3a8e; */
+  /* height: 15px; */
+  /* border-radius:3px; */
+/* } */
+
+/* .scrollable::-webkit-scrollbar-track { */
+  /* background-color: #ffffff; */
+/* } */
+/*slideshow part*/
+.slideshow_container {
+    width:98vw;
+    position: relative;
+    margin: auto;
+  }
+  
+  .slide {
+    display: none;
+  }
+  
+  .slideshow_container img {
+    width: 100%;
+    height: 40vh;
+    cursor: pointer;
+  }
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 9px 9px;
+    margin-top: -25px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    background-color: #d0cccc;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: #348adb;
+    color: white;
+  }
+  
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #d0cccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+  }
+  
+  .active, .dot:hover {
+    background-color: #348adb;
+  }
+/*end of slide show*/
+
+/* product section */
+.products_section {
+    margin-top: 50px;
+  }
+  
+  .sub_page .products_section {
+    margin-top: 75px;
+  }
+  
+  .products_section .heading_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .products_section .heading_container h2 {
+    font-weight: bold;
+    text-align: center;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  } 
+  .product_box {
+    width: 220px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px 10px 10px;
+    background-color: #eeeeee;
+  }
+  .product_box:hover{
+    box-shadow: 2px 2px 5px #adaeaf, 
+            -3px -3px 6px #adaeaf;
+  }
+  .product_img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 3px;
+  }
+  
+  .product_img-box img {
+    width: 100%;
+  }
+  
+  .product_img-box span {
+    display: inline-block;
+    background-color: #fa0e49;
+    color: #fefeff;
+    padding: 2px 17px;
+    margin-top: -30px;
+    margin-bottom: 15px;
+  }
+  
+  .product_detail-box {
+    text-align: center;
+    color: #333;
+    margin-top: 10px;
+  }
+  .product_detail-box div{
+    color: #333;
+  }
+  .product_detail-box div span.current_bid_price{
+    color: #0e7bfa;
+  }
+  .product_detail-box span {
+    color: #ff0000;
+  }
+  .product_detail-box span.no_of_bids{
+    margin-right: 15px;
+    color: #0e7bfa;
+  }
+  
+  /* end product section */
+
+
+/*for category section*/
+
+.category-container {
+    width: 95vw;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.category-container h2 {
+  font-weight: bold;
+  text-align: center;
+}
+.category-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 5px;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  
+  .category-item {
+    width: 250px;
+    height: 350px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 3px;
+    gap: 20px;
+    background-color: #eeeeee;
+    margin: 20px 5px;
+    padding: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.category-item:hover{
+  box-shadow: 2px 2px 5px #adaeaf, 
+          -3px -3px 6px #adaeaf;
+}
+.category-image {
+  width: 100%;
+}
+button.view_all{
+    font-size: 16px;
+    color: white;
+    background-color: #0e7bfa;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    border: 1px solid #0e7bfa;
+  }
+  button.view_all:hover{
+    background-color: white;
+    color: #0e7bfa;
+    border: 1px solid #0e7bfa;
+}
+/*end of categories*/

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bid2Buy: Seller Zone</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/header_only.css" />
+    <link rel="stylesheet" href="../css/scrollable.css" />
+    <script src="../js/get_back_btn.js"></script>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <style>
+      .selling_process_detail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px 30px;
+      }
+      .highlight {
+        color: #0e7bfa;
+      }
+
+      .feature-list {
+        margin: 20px 0;
+        padding-left: 20px;
+        word-spacing: 1px;
+      }
+
+      .feature-list li {
+        list-style-type: none;
+        margin-bottom: 10px;
+      }
+      .sub_topic {
+        font-weight: normal;
+        color: #0e7bfa;
+        padding: 10px 5vw;
+        word-spacing: 1px;
+        font-weight: bold;
+      }
+
+      form {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        width: 90vw;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .row_group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .column_group {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        width: 30%;
+      }
+      .condition_wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 30px;
+        margin-bottom: 20px;
+      }
+      .condition_wrapper input {
+        height: 18px;
+      }
+      .condition {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: row;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #333;
+        border-radius: 3px;
+        font-size: 14px;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border: 1px solid #0e7bfa;
+        outline: none;
+        transition: 1s;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+      div.submit_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      button {
+        background-color: #0e7bfa;
+        color: white;
+        padding: 10px 80px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      button:hover {
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="first_nav">
+        <div class="left_part">
+          <a href="./homepage.html">
+            <div class="logo">
+              <!-- <img src="../assets/logo_main.png" alt="B2B" /> -->
+              <h1>Bid2Buy</h1>
+            </div>
+          </a>
+          <ul class="nav_btns">
+            <li>
+              <h2 class="page_title">Sell Products</h2>
+            </li>
+          </ul>
+        </div>
+        <div class="authentication">
+          <h3 class="get_back_btn authentication_btn">❌ Go Back</h3>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="scrollable">
+        <div class="selling_process_detail">
+          <h2 class="sub_topic">Why Sell On Bid2Buy Auctionplace?</h2>
+          <div class="feature-list">
+            <ul>
+              <li>
+                <span class="highlight">Diverse Selling:</span> A online
+                auctionplace for the curated range of products, from rare
+                collectibles to expensive collections.
+              </li>
+              <li>
+                <span class="highlight">Real-Time Bidding:</span> Stay in the
+                loop with our user-friendly real-time bidding system.
+              </li>
+              <li>
+                <span class="highlight">Second-hand Marketplace:</span> Sell
+                confidently on your second-hand marketplace.
+              </li>
+              <li>
+                <span class="highlight">Interactive Auctions:</span> Huge number
+                of bidders participate in lively auctions that make the bidding
+                process an experience to remember.
+              </li>
+            </ul>
+          </div>
+          <h2 class="sub_topic">
+            If you want to sell your products through auction process you can
+            fill the form below to list your product in our online auctionplace
+            for further auction procedures:
+          </h2>
+        </div>
+        <form action="../php/registerProduct.php">
+          <div class="row_group">
+            <div class="column_group">
+              <label for="productName">Product Name:</label>
+              <input
+                type="text"
+                id="productName"
+                name="productName"
+                placeholder="Product Name here"
+                required
+              />
+            </div>
+            <div class="column_group">
+              <label for="brandName">Brand Name (if any):</label>
+              <input
+                type="text"
+                id="brandName"
+                name="brandName"
+                placeholder="Product Brand Name"
+              />
+            </div>
+            <div class="column_group">
+              <label for="productCategory">Product Category:</label>
+              <select id="productCategory" name="productCategory" required>
+                <option value="default">Choose one category</option>
+                <option value="cat-1">Cat-1</option>
+                <option value="cat-2">Cat-2</option>
+                <option value="cat-3">Cat-3</option>
+                <option value="cat-4">Cat-4</option>
+                <option value="cat-5">Cat-5</option>
+                <!-- Add more categories as needed -->
+              </select>
+            </div>
+          </div>
+          <div class="condition_wrapper">
+            <label for="condition">Condition:</label>
+            <span class="condition">
+              <input
+                type="radio"
+                id="new"
+                name="condition"
+                value="new"
+                required
+              />
+              <label class="condition_label" for="new">Brand_New</label>
+            </span>
+            <span class="condition">
+              <input
+                type="radio"
+                id="preowned"
+                name="condition"
+                value="preowned"
+              />
+              <label class="condition_label" for="preowned">Preowned</label>
+            </span>
+          </div>
+          <label for="productDescription">Product Description:</label>
+          <textarea
+            id="productDescription"
+            name="productDescription"
+            rows="5"
+            placeholder="Describe your product in details"
+            required
+          ></textarea>
+          <label for="productHighlights"
+            >Describe your product within three special word (within 20
+            letters):</label
+          >
+          <input
+            type="text"
+            id="productHighlights"
+            name="productHighlights"
+            placeholder="E.g: Expensive Painting"
+            maxlength="15"
+            required
+          />
+          <label for="features"
+            >Please provide at least three features of your product (separated
+            by commas):</label
+          >
+
+          <textarea
+            id="features"
+            name="features"
+            placeholder="Feature one, Feature two, Feature three, Feature four, Feature five"
+          ></textarea>
+
+          <div class="row_group">
+            <div class="column_group">
+              <label for="startingBidPrice">Starting Bid Price:</label>
+              <input
+                type="number"
+                id="startingBidPrice"
+                name="startingBidPrice"
+                placeholder="Price to start auction with"
+                required
+              />
+            </div>
+            <div class="column_group">
+              <label for="deliveryCharges">Delivery Charges:</label>
+              <input
+                type="number"
+                id="deliveryCharges"
+                name="deliveryCharges"
+                placeholder="1km Delivery Rate (Average)"
+                required
+              />
+            </div>
+            <div class="column_group">
+              <label for="auctionDuration"
+                >Auction Duration (Last Date to Bid):</label
+              >
+              <input
+                type="datetime-local"
+                id="auctionDuration"
+                name="auctionDuration"
+                required
+              />
+            </div>
+          </div>
+          <label for="photos">Photos of Product (at least 3):</label>
+          <div class="row_group">
+            <input
+              type="file"
+              id="photo1"
+              name="photos[]"
+              accept="image/*"
+              required
+            />
+            <input
+              type="file"
+              id="photo2"
+              name="photos[]"
+              accept="image/*"
+              required
+            />
+            <input
+              type="file"
+              id="photo3"
+              name="photos[]"
+              accept="image/*"
+              required
+            />
+          </div>
+          <label
+            >Please provide at least five keywords for searching your product by
+            bidder (separated by space):</label
+          >
+
+          <textarea
+            name="keywords"
+            placeholder="E.g: jewellery diamond neclace gift chain ..."
+          ></textarea>
+
+          <div class="submit_wrapper">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.black_text {
+    color: black;
+}
+
+.white_text {
+    color: white;
+}
+i,button,a{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+  }
+header{
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+}
+header nav.first_nav {
+    padding: 3px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0e7bfa;
+    /* background-color: #f8f8f8; */
+    border-bottom: 1px solid #d0cccc;
+    font-family: Play;
+    min-height: 12vh;
+}
+header nav.first_nav div.left_part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* header nav.first_nav div.logo img {
+    width: 170px;
+    cursor: pointer;
+} */
+
+header nav.first_nav div.logo{
+    font-size: 21px;
+    cursor: pointer;
+    color: #d0cccc;
+    margin-left: 1vw;
+    padding-bottom: 7px;
+    margin-right: 1vw;
+    font-family: Lobster;
+    text-shadow: 3px 3px 2px rgb(0, 0, 0);
+}
+header nav.first_nav div.logo:hover{
+    color: #ffffff;
+}
+
+header nav.first_nav ul.nav_btns {
+    min-width: 55vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Play;
+}
+header nav.first_nav ul.nav_btns .text_as_btn{
+    color: white;
+}
+header nav.first_nav ul.nav_btns .text_as_btn:hover{
+    color: #000000;
+}
+
+header nav.second_nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Play;
+}
+
+header nav.second_nav div.search_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+header nav.second_nav div.search_box i {
+    font-size: 24px;
+    color: #0e7bfa;
+}
+
+header nav.second_nav div.search_box input {
+    width: 15vw;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+header nav.second_nav div.search_box span.search_icon_wrapper {
+    padding:5px 12px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+} 
+header nav.second_nav div.search_box span.search_icon_wrapper:hover {
+    border: 3px solid white;
+    background-color: #0e7bfa;
+} 
+header nav.second_nav div.search_box span.search_icon_wrapper:hover i {
+    color: #ffffff;
+} 
+
+header nav.first_nav div.authentication {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 05px;
+    min-width: 20vw;
+    padding-right: 1vw;
+}
+
+.authentication img#profile_pic{
+    border-radius: 50%;
+    height: 10vh;
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+}
+.authentication_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    line-height: 25px;
+    border: 2px solid;
+    /* font-weight: bold; */
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.5s;
+    padding: 3px 16px;
+    background-color: #0e7bfa;
+    color: #ffffff;
+    border-color: #ffffff;
+    cursor: pointer;
+  }
+
+
+.authentication_btn:hover {
+      box-shadow: inset 0 1.5em 0em 0em #ffffff,
+        inset 0 -1.5em 0em 0em #ffffff;
+      border-color: #ffffff;
+      color: #0e7bfa;
+  }
+  h2.page_title{
+    color: #000000;
+    font-size: 30px;
+  }
+  .get_back_btn{
+    margin-left: 280px;
+  }
+  .user_details_n_logout_n_settings{
+    position: absolute;
+    right: 18px;
+    top: 11.2vh;
+    width: 22vw;
+    background-color: #ffffff;
+    border: 3px solid #d0cccc;
+    border-top: none;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 10px;
+}
+.hide{
+    display: none;
+}
+.user_detail_switch_opt{
+      border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    gap: 3px;
+    padding: 3px 1vw 7px 1vw;
+    box-shadow: 0px 0px 10px rgb(111, 110, 110);
+}
+.image_n_name{
+     width: 18vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 1vw;
+    border-bottom: 1px solid #d0cccc;
+  }
+  .image_n_name img{
+    border-radius: 50%;
+    width: 5vw;
+    border: 1px solid rgb(0, 0, 0);
+    cursor:crosshair;
+  }
+  .name{
+    font-size: 21px;
+    cursor: pointer;
+    color: #000000;
+    /* color: #; */
+    margin-left: 1vw;
+    padding-bottom: 10px;
+    margin-right: 1vw;
+    font-family: Lobster;
+    text-shadow: 3px 3px 2px #d0cccc;
+  }
+  .user_detail_switch_opt a{
+    color: #0e7bfa;
+  }
+ul.other_options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Play;
+    /* gap: 5px; */
+}
+ul.other_options li a{
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    border-radius: 7px;
+    padding: 10px;
+}
+ul.other_options .text_as_btn{
+    color: #000000;
+}
+ul.other_options li:hover a{
+    background-color: #d4d4d4ee;
+}
+ul.other_options li:hover .text_as_btn{
+    color: #0e7bfa;
+}
+ul.other_options li i{
+    padding: 10px;
+    color: #000000;
+}
+ul.other_options li:hover i{
+    color: #0e7bfa;
+}

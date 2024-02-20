@@ -1,0 +1,126 @@
+<?php
+
+session_start();
+
+require_once "../required/database.php";
+
+if(isset($_POST['Login']) && ($_SERVER["REQUEST_METHOD"]=="POST") && isset($_POST["accountType"]))
+{ 
+  $email=$_POST['email'];
+
+  $customerId=$_SESSION['customerId'];
+  
+  $password=$_POST['password'];
+
+  $sql="SELECT *FROM Customer WHERE email='$email' OR customerId=$customerId";
+  
+  $stmt=mysqli_query($conn,$sql);
+  
+  $user=mysqli_fetch_assoc($stmt);
+
+  if($user)
+  {
+    if(password_verify($password, $user['passwordHash']))
+    {
+      header("Location: homepage.html");
+    }
+    else
+    {
+      echo "<script>alert('Incorrect passsword')</script>";
+    }
+  }
+  else
+  {
+    echo "<script>alert('No user found with this provided email')</script>";
+  }
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bid2Buy | SignIn</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/register_signIn_style.css" />
+    <link rel="stylesheet" href="../css/header_only.css" />
+    <script src="../js/signin.js"></script>
+    <script src="../js/get_back_btn.js"></script>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <nav class="first_nav">
+        <div class="left_part">
+          <a href="../index.html">
+            <div class="logo">
+              <!-- <img src="../assets/logo_main.png" alt="B2B" /> -->
+              <h1>Bid2Buy</h1>
+            </div>
+          </a>
+          <ul class="nav_btns">
+            <li>
+              <h2 class="page_title">User Login</h2>
+            </li>
+          </ul>
+        </div>
+        <div class="authentication">
+          <h3 class="get_back_btn authentication_btn">❌ Cancel</h3>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <img class="reflect_image" src="../assets/man_n_hammer.png" alt="Man with Auction Hammer" />
+      <div class="wrapper">
+        <div class="form-container register">
+          <!-- <form action="../php/doLogin.php"> -->
+          <form action="../html/homepage.html">
+            <div class="label">Choose Account Type</div>
+            <div class="row_align">
+              <input
+                type="radio"
+                id="seller"
+                name="accountType"
+                value="seller"
+              />
+              <label for="seller">Seller</label>
+
+              <input type="radio" id="buyer" name="accountType" value="buyer" />
+              <label for="buyer">Buyer</label>
+            </div>
+            <input placeholder="Email address" type="email" id="login-email" name="login-email" required />
+            <div class="password_wrapper">
+              <input
+            placeholder="Password"
+              type="password"
+              id="login-password"
+              name="login-password"
+              required
+            /><i
+            class="fa fa-eye-slash toggle-password"
+            id="toggle-password"
+          ></i>
+            </div>
+            <div class="row_align">
+              <label class="password-reset"
+                >Forget Password?<a href="../php/retrievePw.php"
+                  >Retrieve now</a
+                ></label
+              >
+            </div>
+            <input type="submit" value="Login" name='Login'/>
+          </form>
+          <div class="toggle goto-register">
+            Not a member?<a href="./register.html">Sign Up</a>
+          </div>
+        </div>
+      </div>
+     </main>
+  </body>
+</html>

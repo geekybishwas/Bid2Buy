@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bid2Buy: User Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/header_only.css" />
+    <script src="../js/get_back_btn.js"></script>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <style>
+
+section {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #0e7bfa;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        .edit-btn {
+            background-color: #0e7bfa;
+        }
+
+        .edit-btn:hover {
+            background-color: #333;
+        }
+
+        .edit-mode input,
+        .edit-mode select {
+            background-color: #f2f2f2;
+            pointer-events: auto;
+        }
+
+        .edit-mode #accountType {
+            background-color: #f2f2f2;
+            pointer-events: none;
+        }
+        .hide{
+          display: none;
+        }
+        .info_text{
+          color: #0e7bfa;
+        }
+  </style>
+  </head>
+  <body>
+    <header>
+      <nav class="first_nav">
+        <div class="left_part">
+          <a href="./homepage.html">
+            <div class="logo">
+              <!-- <img src="../assets/logo_main.png" alt="B2B" /> -->
+              <h1>Bid2Buy</h1>
+            </div>
+          </a>
+          <ul class="nav_btns">
+            <li>
+              <h2 class="page_title">My Details</h2>
+            </li>
+          </ul>
+        </div>
+        <div class="authentication">
+          <h3 class="get_back_btn authentication_btn">❌ Go Back</h3>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <form>
+          <h3 class="info_text hide">Make changes on necessary fields only,</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="John Doe" required disabled>
+
+            <label for="profile-pic">Profile Pic:</label>
+            <input type="file" id="profile-pic" name="profile-pic" accept="image/*" value="John Doe" required disabled>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="johndoe@example.com" required disabled>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" value="+1 123-456-7890" required disabled>
+
+            <label for="accountType">Account Type:</label>
+            <p>Seller (Cannot be edited)</p>
+
+            <label id="password_label" for="password">Password:</label>
+            <input value="**************" type="password" id="password" name="password" disabled>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" disabled>
+                <!-- js used to add options here -->
+            </select>
+
+            <button type="button" class="edit_btn edit-btn" onclick="showPasswordPopup()">Edit Information</button>
+            <button type="submit" class="save_btn edit-btn edit-mode hide" onclick="saveChanges()">Save Changes</button>
+        </form>
+    </section>
+
+    <script>
+      function showPasswordPopup() {
+          const currentPassword = prompt('Please enter your current password:');
+          // You can add additional validation here
+
+          // If validation is successful, toggle edit mode
+          if (currentPassword !== null && currentPassword === 'PassworD') {
+            alert('Permission granted. You can change your info now.');
+              document.querySelector('form').classList.toggle('edit-mode');
+              const inputs = document.querySelectorAll('.edit-mode input, .edit-mode select');
+              inputs.forEach(input => input.disabled = !input.disabled);
+              document.querySelector(".info_text").classList.toggle('hide');
+              document.querySelector(".save_btn").classList.toggle('hide');
+              document.querySelector(".edit_btn").classList.toggle('hide');
+              document.querySelector("#password_label").innerHTML="New Password (If you want to change)";
+            } else {
+              alert('Invalid password. Please try again.');
+            }
+          }
+          
+          function saveChanges() {
+            // Additional logic for saving changes
+            alert('Changes saved successfully!');
+            document.querySelector(".info_text").classList.toggle('hide');
+            document.querySelector(".save_btn").classList.toggle('hide');
+            document.querySelector(".edit_btn").classList.toggle('hide');
+            document.querySelector("#password_label").innerHTML="Password";
+          }
+          //chossing the country names
+          // Array of country names
+    var countries = [
+        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia",
+        "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
+        "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+        "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia",
+        "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia", "Denmark", "Djibouti", "Dominica",
+        "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini",
+        "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada",
+        "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia",
+        "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati",
+        "Korea, North", "Korea, South", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia",
+        "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta",
+        "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro",
+        "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger",
+        "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea",
+        "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis",
+        "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia",
+        "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia",
+        "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan",
+        "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
+        "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States",
+        "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+    ];
+
+    // Get the select element
+    var selectElement = document.getElementById('country');
+
+    // Loop through countries and generate options
+    countries.forEach(function(country) {
+        var optionElement = document.createElement('option');
+        optionElement.value = country;
+        optionElement.text = country;
+        selectElement.add(optionElement);
+    });
+  </script>
+    </main>
+  </body>
+</html>

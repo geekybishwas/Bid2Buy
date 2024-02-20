@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bid2Buy: Product Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/header_only.css" />
+    <link rel="stylesheet" href="../css/scrollable.css" />
+    <script src="../js/get_back_btn.js"></script>
+    <script src="../js/slide_banner_images.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.png"
+      type="image/x-icon"
+    />
+    <style>
+      body {
+        overflow: hidden;
+      }
+      main {
+        padding: 1vh 1vw;
+      }
+      .product_wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 100px;
+        width: 95vw;
+        padding: 40px 20px;
+        position: relative;
+      }
+      .product_name {
+        position: absolute;
+        top: 0px;
+        left: 30%;
+        font-weight: bold;
+        color: #FD7401;
+      }
+      /*for images*/
+      .slideshow_container {
+        width: 30vw;
+        position: relative;
+        margin: auto;
+        border-radius: 3px;
+        margin-bottom: 25px;
+      }
+
+      .slide {
+        display: none;
+      }
+
+      .slideshow_container img {
+        width: 100%;
+        height: 50vh;
+        cursor: pointer;
+        border-radius: 3px;
+        background-color: #f6f6f6;
+      }
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 9px 9px;
+        margin-top: -25px;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        background-color: #f6f6f6;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .next {
+        right: 0;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: #348adb;
+        color: white;
+      }
+
+      .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 2px;
+        background-color: #d0cccc;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        cursor: pointer;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #348adb;
+      }
+      /*end of slide show*/
+      button {
+        background-color: #0e7bfa;
+        font-size: 16px;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .right_side button{
+        width: 32%;
+      }
+      button:hover {
+        background-color: #333;
+      }
+      .basic_detail_n_features {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+        margin-bottom: 10px;
+      }
+      .product_pricing_n_bids {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-top: 30px;
+        gap: 5px;
+        color: #333;
+      }
+      .product_pricing_n_bids h3,
+      .features h2 {
+        color: #0e7bfa;
+        font-weight: normal;
+      }
+      .product_pricing_n_bids h3 span{
+        color: #000000;
+      }
+      .features h2 {
+        padding-left: 15px;
+      }
+      .features ul {
+        list-style-type: none;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        color: #131313;
+      }
+      
+      .features ul li::before {
+        content: "✓";
+        font-size: 14px;
+        margin-right: 3px;
+        color: #0e7bfa;
+      }
+      .product_description{
+        padding: 10px 30px;
+        color: #131313;
+      }
+      .seller_info{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        font-weight: normal;
+        padding-left: 50px;
+      }
+      .seller_info h3{
+        color: #0e7bfa;
+        font-weight: normal;
+      }
+      .lower_detail{
+        padding-left: 5px;
+      }
+      .lower_detail h4{
+        font-weight: bold;
+        color: #000000;
+      }
+      .lower_detail span{
+        color: #000000;
+        font-weight: normal;
+      }
+      .seller_info_btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3px;
+        color: #0e7bfa;
+      }
+      .hide{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="first_nav">
+        <div class="left_part">
+          <a href="./homepage.html">
+            <div class="logo">
+              <!-- <img src="../assets/logo_main.png" alt="B2B" /> -->
+              <h1>Bid2Buy</h1>
+            </div>
+          </a>
+          <ul class="nav_btns">
+            <li>
+              <h2 class="page_title">Product Details</h2>
+            </li>
+          </ul>
+        </div>
+        <div class="authentication">
+          <h3 class="get_back_btn authentication_btn">❌ Go Back</h3>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="scrollable">
+        <div class="product_wrapper">
+          <h1 class="product_name">Name of the product</h1>
+          <div class="left_side">
+            <section class="slideshow_container">
+              <div class="slide">
+                <img src="../assets/p1.png" alt="Highlight 1" />
+              </div>
+              <div class="slide">
+                <img src="../assets/p2.png" alt="Highlight 2" />
+              </div>
+              <div class="slide">
+                <img src="../assets/p3.png" alt="Highlight 3" />
+              </div>
+              <a class="prev">&#10094;</a>
+              <a class="next">&#10095;</a>
+              <div style="text-align: center">
+                <span id="dot-1" class="dot"></span>
+                <span id="dot-2" class="dot"></span>
+                <span id="dot-3" class="dot"></span>
+              </div>
+            </section>
+            <section class="product_name_n_buttons">
+              <a href="./auction_room.html"><button>Enter Auction</button></a>
+              <a href="./auction_room.html"><button>Bid Now</button></a>
+              <button id="add_watchlists">Add to watchlists</button>
+            </section>
+          </div>
+          <section class="right_side">
+            <div class="basic_detail_n_features">
+              <section class="product_pricing_n_bids">
+                <h3>Condition: <span>Brand New</span></h3>
+                <h3>No of Bids: <span>10</span></h3>
+                <h3>Starting Price: <span>$500</span></h3>
+                <h3>Current Bid Price: <span>$5000</span></h3>
+                <h3>Time left: <span>5 hrs</span></h3>
+                <h3>Brand Name: <span>Asus</span></h3>
+              </section>
+              <section class="features">
+                <h2>Features</h2>
+                <ul>
+                  <li>High-Performance Processor</li>
+                  <li>Ample RAM (Random Access Memory)</li>
+                  <li>Solid State Drive (SSD) Storage</li>
+                  <li>High-Resolution Display</li>
+                  <li>Long Battery Life</li>
+                </ul>
+              </section>
+            </div>
+            <section class="product_description">
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+                similique pariatur optio iure aut? Dolor voluptate natus quia at
+                repudiandae praesentium cumque consectetur doloremque fugit sit
+                itaque, dolorum quod nemo perspiciatis, exercitationem aut!
+                Minima, nam cumque obcaecati suscipit hic similique natus? Officia
+                porro doloribus, dolorem animi aspernatur earum distinctio dolorum
+                nihil ullam provident exercitationem placeat deserunt magnam.
+                Recusandae consectetur adipisci iusto tenetur ullam neque nobis
+                dicta laboriosam? Maiores ipsa ad similique voluptatem non nostrum
+                incidunt, laudantium id dolor ducimus earum. Natus eos, officiis
+                unde accusamus, tempore fugiat eveniet alias, nesciunt temporibus
+                facilis et! Modi doloremque voluptatem nihil odio alias debitis.
+              </p>
+            </section>
+            <section id="seller_btn_box" class="seller_info_btn">
+              You can even contact to seller to know more about the product:
+              <button id="seller_btn">Seller Contacts</button>
+            </section>
+            <section id="seller_box" class="seller_info hide">
+              <h3>Seller Info</h3>
+              <div class="lower_detail">
+                <h4>Name: <span>Pokhara Mart</span></h4>
+                <h4>Email: <span>contact@pokharamart.com</span></h4>
+                <h4>Contact Number: <span>061-52534</span></h4>
+              </div>
+            </section>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    const watchlistBtn = document.getElementById("add_watchlists");
+    watchlistBtn.addEventListener("click", () => {
+      if (watchlistBtn.classList.contains("watchlist_product")) {
+        alert("Product already added to watchlist.");
+      } else {
+        watchlistBtn.classList.add("watchlist_product");
+        alert("Product added to watchlist.");
+      }
+    });
+    // <!--seller info on btn click-->
+    const sellerBtn = document.getElementById("seller_btn");
+    const sellerBtnBox = document.getElementById("seller_btn_box");
+    const sellerBox = document.getElementById("seller_box");
+    sellerBtn.addEventListener('click',()=>{
+      sellerBox.classList.toggle('hide');
+      sellerBtnBox.classList.toggle('hide');
+    })
+
+  </script>
+</html>
